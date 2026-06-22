@@ -1,0 +1,105 @@
+* {
+  box-sizing: border-box;
+  font-family: -apple-system, system-ui, sans-serif;
+}
+
+body {
+  margin: 0;
+  background: #0e0e10;
+  color: #f5f5f5;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 2rem;
+  border-bottom: 1px solid #2a2a2e;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #f5f5f5;
+  text-decoration: none;
+}
+
+.nav-links a, .nav-links button {
+  color: #f5f5f5;
+  margin-left: 1.5rem;
+  text-decoration: none;
+  background: none;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.hero {
+  text-align: center;
+  padding: 4rem 2rem;
+}
+
+.cta-button {
+  display: inline-block;
+  margin-top: 1.5rem;
+  padding: 0.8rem 2rem;
+  background: #e63946;
+  color: white;
+  border-radius: 6px;
+  text-decoration: none;
+}
+
+.artist-grid, .plans-grid, .merch-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  padding: 2rem;
+}
+
+.artist-card, .plan-card, .merch-item {
+  background: #1a1a1d;
+  border-radius: 10px;
+  padding: 1.5rem;
+}
+
+.artist-card img, .artist-detail img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.auth-page {
+  max-width: 400px;
+  margin: 3rem auto;
+  padding: 2rem;
+}
+
+.auth-page form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.auth-page input {
+  padding: 0.7rem;
+  border-radius: 6px;
+  border: 1px solid #333;
+  background: #1a1a1d;
+  color: white;
+}
+
+.auth-page button, .plan-card button {
+  padding: 0.7rem;
+  background: #e63946;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.error {
+  color: #e63946;
+}
+
+.dashboard {
+  padding: 2rem;
+}
