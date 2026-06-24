@@ -8,7 +8,7 @@ resource "aws_internet_gateway" "backstage_igw" {
 
 resource "aws_nat_gateway" "backstage_nat" {
   allocation_id = aws_eip.backstage_eip.id
-  subnet_id     = aws_subnet.backstage_public_subnet.id
+  subnet_id     = aws_subnet.backstage_public_subnet[0].id
   depends_on = [aws_internet_gateway.backstage_igw]
 
   tags = {
