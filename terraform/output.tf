@@ -29,3 +29,12 @@ output "s3_bucket_arn" {
 output "backend_s3_role_arn" {
   value = aws_iam_role.backend_s3_access.arn
 }
+
+
+output "ecr_backend_repo_url" {
+  value = aws_ecr_repository.backend.repository_url
+}
+
+output "ecr_frontend_repo_url" {
+  value = aws_ecr_repository.frontend.repository_url
+}
