@@ -3,12 +3,12 @@ resource "random_password" "rds_master" {
   special = false
 }
 
-resource "aws_secretsmanager_secret" "rds_credentials" {
+resource "aws_secretsmanager_secret" "backstage_rds_credentials" {
   name = "backstage/rds/credentials"
 }
 
-resource "aws_secretsmanager_secret_version" "rds_credentials" {
-  secret_id = aws_secretsmanager_secret.rds_credentials.id
+resource "aws_secretsmanager_secret_version" "backstage_rds_credentials" {
+  secret_id = aws_secretsmanager_secret.backstage_rds_credentials.id
   secret_string = jsonencode({
     username = var.db_username
     password = random_password.rds_master.result
