@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: frontend-service
+spec:
+  type: ClusterIP
+  selector:
+    app: frontend    # MUST match the pod template label in frontend-deployment.yaml exactly
+  ports:
+    - port: 80
+      targetPort: 80

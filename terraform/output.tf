@@ -38,3 +38,8 @@ output "ecr_backend_repo_url" {
 output "ecr_frontend_repo_url" {
   value = aws_ecr_repository.backstage_frontend.repository_url
 }
+
+
+output "eso_role_arn" {
+  value = aws_iam_role.eso_secrets_access.arn
+}
