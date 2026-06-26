@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: frontend
-          image: 221792772427.dkr.ecr.us-east-1.amazonaws.com/backstage-frontend:1569243
+          image: 221792772427.dkr.ecr.us-east-1.amazonaws.com/backstage-frontend:v3
           ports:
             - containerPort: 80
           resources:
