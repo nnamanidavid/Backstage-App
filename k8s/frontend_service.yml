@@ -5,7 +5,7 @@ metadata:
 spec:
   type: ClusterIP
   selector:
-    app: frontend    # MUST match the pod template label in frontend-deployment.yaml exactly
+    app: frontend    
   ports:
     - port: 80
       targetPort: 80
