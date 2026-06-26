@@ -7,7 +7,7 @@ data "aws_iam_policy_document" "eso_secrets_permissions" {
   statement {
     effect    = "Allow"
     actions   = ["secretsmanager:GetSecretValue", "secretsmanager:DescribeSecret"]
-    resources = [aws_secretsmanager_secret.rds_credentials.arn]
+    resources = [aws_secretsmanager_secret.backstage_rds_credentials.arn]
   }
 }
 

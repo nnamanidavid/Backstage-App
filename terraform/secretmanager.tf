@@ -4,7 +4,7 @@ resource "random_password" "rds_master" {
 }
 
 resource "aws_secretsmanager_secret" "backstage_rds_credentials" {
-  name = "backstage_app/rds/credentials"
+  name = "backstageapp/rds/credentials"
 }
 
 resource "aws_secretsmanager_secret_version" "backstage_rds_credentials" {
