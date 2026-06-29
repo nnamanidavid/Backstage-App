@@ -43,3 +43,7 @@ variable "db_username" {
   type    = string
   default = "backstage_admin"
 }
+
+variable "stripe_secret_key" {
+  type = string
+}
