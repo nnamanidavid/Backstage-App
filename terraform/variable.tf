@@ -45,5 +45,7 @@ variable "db_username" {
 }
 
 variable "stripe_secret_key" {
-  type = string
+  description = "Stripe secret key from the Stripe dashboard - pass via -var or a .tfvars file that is NOT committed"
+  type        = string
+  sensitive   = true
 }

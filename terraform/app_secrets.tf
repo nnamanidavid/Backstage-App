@@ -5,14 +5,10 @@ resource "random_password" "jwt_secret" {
 }
 
 
-variable "stripe_secret_key" {
-  description = "Stripe secret key from the Stripe dashboard - pass via -var or a .tfvars file that is NOT committed"
-  type        = string
-  sensitive   = true
-}
+
 
 resource "aws_secretsmanager_secret" "app_secrets" {
-  name = "backstage/app/secrets"
+  name = "backstage_app/app/secrets"
 }
 
 resource "aws_secretsmanager_secret_version" "app_secrets" {
