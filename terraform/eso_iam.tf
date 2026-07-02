@@ -5,9 +5,12 @@ resource "aws_iam_role" "eso_secrets_access" {
 
 data "aws_iam_policy_document" "eso_secrets_permissions" {
   statement {
-    effect    = "Allow"
+    effect = "Allow"
     actions   = ["secretsmanager:GetSecretValue", "secretsmanager:DescribeSecret"]
-    resources = [aws_secretsmanager_secret.backstage_rds_credentials.arn]
+    resources = [
+      aws_secretsmanager_secret.backstage_rds_credentials.arn,
+      aws_secretsmanager_secret.app_secrets.arn,
+    ]
   }
 }
 
@@ -20,3 +23,4 @@ resource "aws_iam_role_policy_attachment" "eso_secrets_attach" {
   role       = aws_iam_role.eso_secrets_access.name
   policy_arn = aws_iam_policy.eso_secrets_permissions.arn
 }
+

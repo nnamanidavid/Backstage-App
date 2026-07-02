@@ -67,7 +67,7 @@ data "aws_iam_policy_document" "eso_irsa_trust" {
     condition {
       test     = "StringEquals"
       variable = "${replace(aws_iam_openid_connect_provider.eks.url, "https://", "")}:sub"
-      values   = ["system:serviceaccount:external-secrets:external-secrets-sa"]
+      values   = ["system:serviceaccount:external-secrets:external-secrets"]
     }
 
     condition {

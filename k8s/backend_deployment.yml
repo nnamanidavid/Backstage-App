@@ -17,7 +17,7 @@ spec:
       serviceAccountName: backstage-backend
       containers:
         - name: backend-con
-          image: 221792772427.dkr.ecr.us-east-1.amazonaws.com/backstage-backend:v2
+          image: 221792772427.dkr.ecr.us-east-1.amazonaws.com/backstage-backend:v3
           ports:
             - containerPort: 3000
           env:
