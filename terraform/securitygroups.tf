@@ -15,7 +15,7 @@ resource "aws_security_group_rule" "rds_from_eks_nodes" {
   to_port                  = 5432
   protocol                 = "tcp"
   security_group_id        = aws_security_group.backstage_rds_sg.id
-  source_security_group_id = aws_security_group.eks_nodes_sg.id
+  source_security_group_id = aws_eks_cluster.backstage.vpc_config[0].cluster_security_group_id
 }
 
 resource "aws_security_group_rule" "rds_egress_all" {

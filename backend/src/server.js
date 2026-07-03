@@ -2,17 +2,25 @@ require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
 
-
+const pool = require('./config/db');
 const authRoutes = require('./routes/auth');
 const artistRoutes = require('./routes/artists');
 const subscriptionRoutes = require('./routes/subscriptions');
 const shipmentRoutes = require('./routes/shipments');
-const pool = require('./config/db');
 
 const app = express();
 
 app.use(cors());
 app.use(express.json());
+
+app.use('/api/auth', authRoutes);
+app.use('/api/artists', artistRoutes);
+app.use('/api/subscriptions', subscriptionRoutes);
+app.use('/api/shipments', shipmentRoutes);
+
+app.get('/', (req, res) => {
+  res.send('Backstage API is running');
+});
 
 app.get('/healthz', async (req, res) => {
   try {
@@ -24,16 +32,8 @@ app.get('/healthz', async (req, res) => {
   }
 });
 
-app.use('/api/auth', authRoutes);
-app.use('/api/artists', artistRoutes);
-app.use('/api/subscriptions', subscriptionRoutes);
-app.use('/api/shipments', shipmentRoutes);
 
-app.get('/', (req, res) => {
-  res.send('Backstage API is running');
-});
-
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 app.listen(PORT, () => {
   console.log(`Backstage backend listening on port ${PORT}`);
