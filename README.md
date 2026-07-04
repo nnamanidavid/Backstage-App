@@ -1,6 +1,6 @@
 # Backstage
 
-Subscription box service pairing Nigerian indie musicians with merch (vinyl/cassette + physical
+Subscription box service which helps in pairing Nigerian indie musicians with merch (vinyl/cassette + physical
 merch monthly), with a companion web app for managing subscriptions, browsing artists, and
 streaming preview tracks.
 
