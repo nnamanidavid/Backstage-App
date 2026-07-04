@@ -8,7 +8,7 @@ resource "random_password" "jwt_secret" {
 
 
 resource "aws_secretsmanager_secret" "app_secrets" {
-  name = "backstage_application/app/secrets"
+  name = "backstage_applications/app/secrets"
 }
 
 resource "aws_secretsmanager_secret_version" "app_secrets" {
